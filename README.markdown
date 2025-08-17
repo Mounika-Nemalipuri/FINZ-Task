@@ -1,4 +1,11 @@
-# Execution Process for Demo (FrontEnd Folder)
+# Execution Process for Demo
+
+# Key Files
+**main.py**: FastAPI app with endpoints (/upload, /ask).
+**config.py**: Environment and Pinecone setup.
+**utils.py**: QuickBooks API, text extraction, and agent tools.
+**demo.html**: Frontend interface
+**Note:** To execute this project, make sure to create and configure a .env file with your own credentials. Please find the required .env file fields listed at the end of this file.
 
 This document outlines the process of executing the demo application stored in the `FrontEnd` folder, which interacts with the FastAPI backend for invoice processing and question-answering functionalities.
 
@@ -85,3 +92,19 @@ The `FrontEnd` folder contains:
 - The backend uses Google Gemini (`gemini-1.5-flash`) for LLM tasks and Pinecone for vector storage.
 - QuickBooks integration requires a valid sandbox or production account.
 - For production, secure the CORS settings and use HTTPS.
+
+
+
+GOOGLE_CLOUD_PROJECT= ****************
+GOOGLE_CLOUD_LOCATION= 
+GOOGLE_APPLICATION_CREDENTIALS= "path"
+GOOGLE_API_KEY = *************************************
+
+PINECONE_API_KEY= ******************************************
+PINECONE_INDEX=finz-invoices
+
+
+QB_CLIENT_ID = ***************************************
+QB_CLIENT_SECRET = *************************
+QB_REFRESH_TOKEN = ********************
+QB_REALM_ID = *************
