@@ -1,0 +1,154 @@
+2025-08-16 15:40:30,954 - __main__ - INFO - File saved: Uploads\Invoice.pdf
+2025-08-16 15:40:31,032 - __main__ - INFO - Extracted text from PDF Uploads\Invoice.pdf: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: Septe...
+2025-08-16 15:40:31,033 - __main__ - INFO - Extracted text: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: September 15, 2025  
+Desc...
+2025-08-16 15:40:33,104 - __main__ - INFO - Stored 1 chunks for file 'Invoice.pdf' in Pinecone
+2025-08-16 15:40:33,108 - __main__ - INFO - Extracting data from invoice: Invoice.pdf
+2025-08-16 15:40:35,137 - __main__ - INFO - Extracted vendor: PG&E, amount: 522.0
+2025-08-16 15:40:35,140 - __main__ - INFO - Running agent with input: Process the invoice with vendor_name: PG&E, amount: 522.0. Do not change the vendor_name or amount. Always take vendor_name: PG&E and amount: 522.0 as input., session_id: upload_Invoice.pdf_20250816154035
+2025-08-16 15:40:36,675 - __main__ - INFO - Access token obtained successfully
+2025-08-16 15:40:37,867 - __main__ - INFO - Vendor 'PG&E' found with ID: 48
+2025-08-16 15:40:42,475 - __main__ - INFO - Bill created successfully
+2025-08-16 15:40:42,477 - __main__ - INFO - Bill posted successfully
+2025-08-16 15:40:46,779 - __main__ - INFO - Agent response: {'input': 'Process the invoice with vendor_name: PG&E, amount: 522.0. Do not change the vendor_name or amount. Always take vendor_name: PG&E and amount: 522.0 as input.', 'chat_history': [], 'output': '```json\n{\n  "vendor_name": "PG&E",\n  "amount": 522.0,\n  "posting_status": "Auto-posted successfully",\n  "bill_details": {\n    "Bill": {\n      "APAccountRef": {\n        "name": "Accounts Payable (A/P)",\n        "value": "33"\n      },\n      "Balance": 522,\n      "CurrencyRef": {\n        "name": "United States Dollar",\n        "value": "USD"\n      },\n      "DocNumber": "BILL-250816154041",\n      "DueDate": "2025-08-28",\n      "Id": "151",\n      "Line": [\n        {\n          "AccountBasedExpenseLineDetail": {\n            "AccountRef": {\n              "name": "Advertising",\n              "value": "7"\n            },\n            "BillableStatus": "NotBillable",\n            "TaxCodeRef": {\n              "value": "NON"\n            }\n          },\n          "Amount": 522,\n          "DetailType": "AccountBasedExpenseLineDetail",\n          "Id": "1",\n          "LineNum": 1,\n          "LinkedTxn": []\n        }\n      ],\n      "MetaData": {\n        "CreateTime": "2025-08-16T12:40:43-07:00",\n        "LastModifiedByRef": {\n          "value": "9341455184164830"\n        },\n        "LastUpdatedTime": "2025-08-16T12:40:43-07:00"\n      },\n      "SyncToken": "0",\n      "TotalAmt": 522,\n      "TxnDate": "2025-08-16",\n      "VendorAddr": {\n        "City": "Palo Alto",\n        "CountrySubDivisionCode": "CA",\n        "Id": "42",\n        "Lat": "37.445013",\n        "Line1": "4 Main St.",\n        "Long": "-122.1391443",\n        "PostalCode": "94303"\n      },\n      "VendorRef": {\n        "name": "PG&E",\n        "value": "48"\n      },\n      "domain": "QBO",\n      "sparse": false\n    },\n    "time": "2025-08-16T12:40:42.786-07:00"\n  }\n}\n```\n'}
+2025-08-16 15:40:46,781 - __main__ - ERROR - Invalid JSON output from agent: Expecting value: line 1 column 1 (char 0)
+2025-08-17 11:41:23,963 - __main__ - ERROR - Error processing file Invoice.pdf: name 'shutil' is not defined
+2025-08-17 11:44:25,125 - __main__ - INFO - File saved: Uploads\Invoice.pdf
+2025-08-17 11:44:25,238 - utils - INFO - Extracted text from PDF Uploads\Invoice.pdf: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: Septe...
+2025-08-17 11:44:25,239 - __main__ - INFO - Extracted text: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: September 15, 2025  
+Desc...
+2025-08-17 11:44:25,240 - utils - ERROR - Failed to store in Pinecone for Invoice.pdf: name 'VertexAIEmbeddings' is not defined
+2025-08-17 11:44:25,240 - __main__ - ERROR - Error processing file Invoice.pdf: name 'VertexAIEmbeddings' is not defined
+2025-08-17 11:47:56,923 - __main__ - INFO - File saved: Uploads\Invoice.pdf
+2025-08-17 11:47:56,973 - utils - INFO - Extracted text from PDF Uploads\Invoice.pdf: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: Septe...
+2025-08-17 11:47:56,974 - __main__ - INFO - Extracted text: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: September 15, 2025  
+Desc...
+2025-08-17 11:47:59,434 - utils - INFO - Stored 1 chunks for file 'Invoice.pdf' in Pinecone
+2025-08-17 11:47:59,435 - utils - INFO - Extracting data from invoice: Invoice.pdf
+2025-08-17 11:47:59,876 - utils - ERROR - Failed to extract invoice data for Invoice.pdf: name 'init_chat_model' is not defined
+2025-08-17 11:47:59,878 - __main__ - ERROR - Error processing file Invoice.pdf: Failed to extract invoice data: name 'init_chat_model' is not defined
+2025-08-17 11:50:14,075 - __main__ - INFO - File saved: Uploads\Invoice.pdf
+2025-08-17 11:50:14,098 - utils - INFO - Extracted text from PDF Uploads\Invoice.pdf: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: Septe...
+2025-08-17 11:50:14,098 - __main__ - INFO - Extracted text: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: September 15, 2025  
+Desc...
+2025-08-17 11:50:16,208 - utils - INFO - Stored 1 chunks for file 'Invoice.pdf' in Pinecone
+2025-08-17 11:50:16,209 - utils - INFO - Extracting data from invoice: Invoice.pdf
+2025-08-17 11:50:16,590 - utils - ERROR - Failed to extract invoice data for Invoice.pdf: name 'ConversationBufferMemory' is not defined
+2025-08-17 11:50:16,591 - __main__ - ERROR - Error processing file Invoice.pdf: Failed to extract invoice data: name 'ConversationBufferMemory' is not defined
+2025-08-17 11:53:13,027 - __main__ - INFO - File saved: Uploads\Invoice.pdf
+2025-08-17 11:53:13,066 - utils - INFO - Extracted text from PDF Uploads\Invoice.pdf: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: Septe...
+2025-08-17 11:53:13,067 - __main__ - INFO - Extracted text: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: September 15, 2025  
+Desc...
+2025-08-17 11:53:15,260 - utils - INFO - Stored 1 chunks for file 'Invoice.pdf' in Pinecone
+2025-08-17 11:53:15,262 - utils - INFO - Extracting data from invoice: Invoice.pdf
+2025-08-17 11:53:19,556 - utils - INFO - Extracted vendor: PG&E, amount: 522.0
+2025-08-17 11:53:19,562 - __main__ - INFO - Running agent with input: Process the invoice with vendor_name: PG&E, amount: 522.0. Do not change the vendor_name or amount. Always take vendor_name: PG&E and amount: 522.0 as input., session_id: upload_Invoice.pdf_20250817115319
+2025-08-17 11:53:21,400 - utils - INFO - Access token obtained successfully
+2025-08-17 11:53:23,041 - utils - INFO - Vendor 'PG&E' found with ID: 48
+2025-08-17 11:53:27,812 - utils - INFO - Bill created successfully
+2025-08-17 11:53:27,813 - utils - INFO - Bill posted successfully
+2025-08-17 11:53:32,115 - __main__ - INFO - Agent response: {'input': 'Process the invoice with vendor_name: PG&E, amount: 522.0. Do not change the vendor_name or amount. Always take vendor_name: PG&E and amount: 522.0 as input.', 'chat_history': [], 'output': '```json\n{\n  "vendor_name": "PG&E",\n  "amount": 522.0,\n  "posting_status": "Auto-posted successfully",\n  "bill_details": {\n    "Bill": {\n      "APAccountRef": {\n        "name": "Accounts Payable (A/P)",\n        "value": "33"\n      },\n      "Balance": 522,\n      "CurrencyRef": {\n        "name": "United States Dollar",\n        "value": "USD"\n      },\n      "DocNumber": "BILL-250817115326",\n      "DueDate": "2025-08-28",\n      "Id": "152",\n      "Line": [\n        {\n          "AccountBasedExpenseLineDetail": {\n            "AccountRef": {\n              "name": "Advertising",\n              "value": "7"\n            },\n            "BillableStatus": "NotBillable",\n            "TaxCodeRef": {\n              "value": "NON"\n            }\n          },\n          "Amount": 522,\n          "DetailType": "AccountBasedExpenseLineDetail",\n          "Id": "1",\n          "LineNum": 1,\n          "LinkedTxn": []\n        }\n      ],\n      "MetaData": {\n        "CreateTime": "2025-08-17T08:53:29-07:00",\n        "LastModifiedByRef": {\n          "value": "9341455184164830"\n        },\n        "LastUpdatedTime": "2025-08-17T08:53:29-07:00"\n      },\n      "SyncToken": "0",\n      "TotalAmt": 522,\n      "TxnDate": "2025-08-17",\n      "VendorAddr": {\n        "City": "Palo Alto",\n        "CountrySubDivisionCode": "CA",\n        "Id": "42",\n        "Lat": "37.445013",\n        "Line1": "4 Main St.",\n        "Long": "-122.1391443",\n        "PostalCode": "94303"\n      },\n      "VendorRef": {\n        "name": "PG&E",\n        "value": "48"\n      },\n      "domain": "QBO",\n      "sparse": false\n    },\n    "time": "2025-08-17T08:53:29.443-07:00"\n  }\n}\n```\n'}
+2025-08-17 11:53:32,116 - __main__ - ERROR - Invalid JSON output from agent: Expecting value: line 1 column 1 (char 0)
+2025-08-17 13:43:44,450 - __main__ - INFO - File saved: Uploads\Invoice.pdf
+2025-08-17 13:43:44,505 - utils - INFO - Extracted text from PDF Uploads\Invoice.pdf: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: Septe...
+2025-08-17 13:43:44,505 - __main__ - INFO - Extracted text: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: September 15, 2025  
+Desc...
+2025-08-17 13:43:47,479 - utils - INFO - Stored 1 chunks for file 'Invoice.pdf' in Pinecone
+2025-08-17 13:43:47,481 - utils - INFO - Extracting data from invoice: Invoice.pdf
+2025-08-17 13:43:51,461 - utils - INFO - Extracted vendor: PG&E, amount: 522.0
+2025-08-17 13:43:51,471 - __main__ - INFO - Running agent with input: Process the invoice with vendor_name: PG&E, amount: 522.0. Do not change the vendor_name or amount. Always take vendor_name: PG&E and amount: 522.0 as input., session_id: upload_Invoice.pdf_20250817134351
+2025-08-17 13:43:53,631 - utils - INFO - Access token obtained successfully
+2025-08-17 13:43:55,326 - utils - INFO - Vendor 'PG&E' found with ID: 48
+2025-08-17 13:43:59,921 - utils - ERROR - Failed to create bill: 401 Client Error: Unauthorized for url: https://sandbox-quickbooks.api.intuit.com/v3/company/9341455184164777/bill?minorversion=65
+2025-08-17 13:43:59,922 - utils - WARNING - Failed to create bill
+2025-08-17 13:44:00,723 - __main__ - INFO - Agent response: {'input': 'Process the invoice with vendor_name: PG&E, amount: 522.0. Do not change the vendor_name or amount. Always take vendor_name: PG&E and amount: 522.0 as input.', 'chat_history': [], 'output': '```json\n{\n  "vendor_name": "PG&E",\n  "amount": 522.0,\n  "posting_status": "Failed to post bill",\n  "bill_details": null\n}\n```\n'}
+2025-08-17 13:48:48,363 - __main__ - INFO - File saved: Uploads\Invoice.pdf
+2025-08-17 13:48:48,399 - utils - INFO - Extracted text from PDF Uploads\Invoice.pdf: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: Septe...
+2025-08-17 13:48:48,400 - __main__ - INFO - Extracted text: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: September 15, 2025  
+Desc...
+2025-08-17 13:48:50,985 - utils - INFO - Stored 1 chunks for file 'Invoice.pdf' in Pinecone
+2025-08-17 13:48:50,987 - utils - INFO - Extracting data from invoice: Invoice.pdf
+2025-08-17 13:48:55,421 - utils - INFO - Extracted vendor: PG&E, amount: 522.0
+2025-08-17 13:48:55,426 - __main__ - INFO - Running agent with input: Process the invoice with vendor_name: PG&E, amount: 522.0. Do not change the vendor_name or amount. Always take vendor_name: PG&E and amount: 522.0 as input., session_id: upload_Invoice.pdf_20250817134855
+2025-08-17 13:48:56,934 - utils - INFO - Access token obtained successfully
+2025-08-17 13:48:58,387 - utils - INFO - Vendor 'PG&E' found with ID: 48
+2025-08-17 13:49:05,356 - utils - INFO - Bill created successfully
+2025-08-17 13:49:05,358 - utils - INFO - Bill posted successfully
+2025-08-17 13:49:09,856 - __main__ - INFO - Agent response: {'input': 'Process the invoice with vendor_name: PG&E, amount: 522.0. Do not change the vendor_name or amount. Always take vendor_name: PG&E and amount: 522.0 as input.', 'chat_history': [], 'output': '```json\n{\n  "vendor_name": "PG&E",\n  "amount": 522.0,\n  "posting_status": "Auto-posted successfully",\n  "bill_details": {\n    "Bill": {\n      "APAccountRef": {\n        "name": "Accounts Payable (A/P)",\n        "value": "33"\n      },\n      "Balance": 522,\n      "CurrencyRef": {\n        "name": "United States Dollar",\n        "value": "USD"\n      },\n      "DocNumber": "BILL-250817134902",\n      "DueDate": "2025-08-28",\n      "Id": "153",\n      "Line": [\n        {\n          "AccountBasedExpenseLineDetail": {\n            "AccountRef": {\n              "name": "Advertising",\n              "value": "7"\n            },\n            "BillableStatus": "NotBillable",\n            "TaxCodeRef": {\n              "value": "NON"\n            }\n          },\n          "Amount": 522,\n          "DetailType": "AccountBasedExpenseLineDetail",\n          "Id": "1",\n          "LineNum": 1,\n          "LinkedTxn": []\n        }\n      ],\n      "MetaData": {\n        "CreateTime": "2025-08-17T10:49:07-07:00",\n        "LastModifiedByRef": {\n          "value": "9341455184164830"\n        },\n        "LastUpdatedTime": "2025-08-17T10:49:07-07:00"\n      },\n      "SyncToken": "0",\n      "TotalAmt": 522,\n      "TxnDate": "2025-08-17",\n      "VendorAddr": {\n        "City": "Palo Alto",\n        "CountrySubDivisionCode": "CA",\n        "Id": "42",\n        "Lat": "37.445013",\n        "Line1": "4 Main St.",\n        "Long": "-122.1391443",\n        "PostalCode": "94303"\n      },\n      "VendorRef": {\n        "name": "PG&E",\n        "value": "48"\n      },\n      "domain": "QBO",\n      "sparse": false\n    },\n    "time": "2025-08-17T10:49:06.971-07:00"\n  }\n}\n```\n'}
+2025-08-17 13:55:41,358 - __main__ - INFO - File saved: Uploads\Invoice.pdf
+2025-08-17 13:55:41,407 - utils - INFO - Extracted text from PDF Uploads\Invoice.pdf: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: Septe...
+2025-08-17 13:55:41,407 - __main__ - INFO - Extracted text: Invoice #12345  
+Date: August 1 4, 2025  
+Vendor: PG&E  
+Total Amount Due: $5 22.00 
+Due Date: September 15, 2025  
+Desc...
+2025-08-17 13:55:44,021 - utils - INFO - Stored 1 chunks for file 'Invoice.pdf' in Pinecone
+2025-08-17 13:55:44,022 - utils - INFO - Extracting data from invoice: Invoice.pdf
+2025-08-17 13:55:47,812 - utils - INFO - Extracted vendor: PG&E, amount: 522.0
+2025-08-17 13:55:47,818 - __main__ - INFO - Running agent with input: Process the invoice with vendor_name: PG&E, amount: 522.0. Do not change the vendor_name or amount. Always take vendor_name: PG&E and amount: 522.0 as input., session_id: upload_Invoice.pdf_20250817135547
+2025-08-17 13:55:49,506 - utils - INFO - Access token obtained successfully
+2025-08-17 13:55:50,470 - utils - INFO - Vendor 'PG&E' found with ID: 48
+2025-08-17 13:55:55,065 - utils - INFO - Bill created successfully
+2025-08-17 13:55:55,067 - utils - INFO - Bill posted successfully
+2025-08-17 13:55:59,365 - __main__ - INFO - Agent response: {'input': 'Process the invoice with vendor_name: PG&E, amount: 522.0. Do not change the vendor_name or amount. Always take vendor_name: PG&E and amount: 522.0 as input.', 'chat_history': [], 'output': '```json\n{\n  "vendor_name": "PG&E",\n  "amount": 522.0,\n  "posting_status": "Auto-posted successfully",\n  "bill_details": {\n    "Bill": {\n      "APAccountRef": {\n        "name": "Accounts Payable (A/P)",\n        "value": "33"\n      },\n      "Balance": 522,\n      "CurrencyRef": {\n        "name": "United States Dollar",\n        "value": "USD"\n      },\n      "DocNumber": "BILL-250817135554",\n      "DueDate": "2025-08-28",\n      "Id": "154",\n      "Line": [\n        {\n          "AccountBasedExpenseLineDetail": {\n            "AccountRef": {\n              "name": "Advertising",\n              "value": "7"\n            },\n            "BillableStatus": "NotBillable",\n            "TaxCodeRef": {\n              "value": "NON"\n            }\n          },\n          "Amount": 522,\n          "DetailType": "AccountBasedExpenseLineDetail",\n          "Id": "1",\n          "LineNum": 1,\n          "LinkedTxn": []\n        }\n      ],\n      "MetaData": {\n        "CreateTime": "2025-08-17T10:55:57-07:00",\n        "LastModifiedByRef": {\n          "value": "9341455184164830"\n        },\n        "LastUpdatedTime": "2025-08-17T10:55:57-07:00"\n      },\n      "SyncToken": "0",\n      "TotalAmt": 522,\n      "TxnDate": "2025-08-17",\n      "VendorAddr": {\n        "City": "Palo Alto",\n        "CountrySubDivisionCode": "CA",\n        "Id": "42",\n        "Lat": "37.445013",\n        "Line1": "4 Main St.",\n        "Long": "-122.1391443",\n        "PostalCode": "94303"\n      },\n      "VendorRef": {\n        "name": "PG&E",\n        "value": "48"\n      },\n      "domain": "QBO",\n      "sparse": false\n    },\n    "time": "2025-08-17T10:55:56.721-07:00"\n  }\n}\n```\n'}

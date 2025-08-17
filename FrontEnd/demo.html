@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat with File</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f3f4f6;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .chat-container {
+        background: white;
+        width: 100%;
+        max-width: 500px;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .file-upload {
+        padding: 10px;
+        background: #e5e7eb;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .file-upload input {
+        display: none;
+    }
+    .file-upload label {
+        background: #3b82f6;
+        color: white;
+        padding: 8px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+    .chat-box {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+        background: #f9fafb;
+    }
+    .message {
+        margin: 6px 0;
+        max-width: 80%;
+        padding: 8px 12px;
+        border-radius: 12px;
+        line-height: 1.4;
+    }
+    .user {
+        background: #3b82f6;
+        color: white;
+        margin-left: auto;
+    }
+    .bot {
+        background: #e5e7eb;
+        color: black;
+        margin-right: auto;
+    }
+    .input-area {
+        display: flex;
+        padding: 10px;
+        border-top: 1px solid #ddd;
+        gap: 5px;
+    }
+    .input-area input {
+        flex: 1;
+        padding: 8px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+    .input-area button {
+        background: #3b82f6;
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+</style>
+</head>
+<body>
+
+<div class="chat-container">
+    <!-- File Upload -->
+    <div class="file-upload">
+        <label for="fileInput">Upload PDF/Image</label>
+        <input type="file" id="fileInput" accept=".pdf,image/*">
+        <span id="fileName"></span>
+    </div>
+	
+	<script>
+		document.getElementById("fileInput").addEventListener("change", async function(event) {
+			const file = event.target.files[0];
+			if (!file) return;
+
+			document.getElementById("fileName").textContent = file.name;
+
+			const formData = new FormData();
+			formData.append("file", file);
+
+			try {
+				const response = await fetch("http://127.0.0.1:8000/upload", {
+					method: "POST",
+					body: formData
+				});
+				const result = await response.json();
+				console.log("Server response:", result);
+				alert("File uploaded successfully!");
+			} catch (err) {
+				console.error("Upload failed:", err);
+				alert("File upload failed!");
+			}
+		});
+	</script>
+
+    <!-- Chat Box -->
+    <div class="chat-box" id="chat-box">
+    <div class="message bot">Hi! Upload a file and ask me anything.</div>
+    <div class="message user">Sure, uploading now!</div>
+</div>
+
+<!-- Input Area -->
+<div class="input-area">
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button id="send-btn">Send</button>
+</div>
+
+<script>
+    const chatBox = document.getElementById("chat-box");
+    const userInput = document.getElementById("user-input");
+    const sendBtn = document.getElementById("send-btn");
+
+    function appendMessage(sender, text) {
+        const msgDiv = document.createElement("div");
+        msgDiv.classList.add("message", sender);
+        msgDiv.textContent = text;
+        chatBox.appendChild(msgDiv);
+        chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    async function sendMessage() {
+        const query = userInput.value.trim();
+        if (!query) return;
+
+        appendMessage("user", query);
+        userInput.value = "";
+
+        // Send query to backend
+        try {
+            const res = await fetch("http://127.0.0.1:8000/ask", {  // <-- Your backend endpoint
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ question: query })
+            });
+
+            const data = await res.json();
+            appendMessage("bot", data.answer || "Sorry, I didn't understand that.");
+        } catch (err) {
+            console.error(err);
+            appendMessage("bot", "Error: Could not connect to server.");
+        }
+    }
+
+    sendBtn.addEventListener("click", sendMessage);
+    userInput.addEventListener("keypress", function(e) {
+        if (e.key === "Enter") sendMessage();
+    });
+</script>
+</div>
+
+</body>
+</html>
