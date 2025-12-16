@@ -1,3 +1,21 @@
+# Objective
+Build a working prototype of a lightweight Agentic AI System that performs end-to-end financial
+automation:
+Ingests a vendor invoice (PDF or image)
+Extracts key fields using an LLM-powered tool
+Uses Retrieval-Augmented Generation (RAG) to answer financial queries
+Makes a decision on whether to post to QuickBooks
+Executes the QuickBooks API call to post the transaction
+This demo simulates an Agentic AI workflow, which sees, reasons, and acts on real-world financial data.
+# Agent Architecture
+The agent should:
+Receive an uploaded invoice (PDF or image)
+Use tools to parse and embed invoice data
+Store data in a vector DB and enable Q&A via RAG
+Decide whether to post to QuickBooks based on context or user input
+Execute the action through the QuickBooks API
+Use LangChain’s AgentExecutor and Tool components to simulate an autonomous reasoning loop.
+
 # Execution Process for Demo
 
 # Key Files
